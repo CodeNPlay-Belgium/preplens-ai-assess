@@ -1,8 +1,13 @@
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* max-width: 1280px; */ /* This was already commented out */
+  /* margin: 0 auto; */ /* This was already commented out */
+  /* padding: 2rem; */ /* Removing this as layout/pages will handle padding */
+  /* text-align: center; */ /* Removing this as layout/pages will handle text alignment */
+  width: 100%; /* Ensuring root takes full width */
+  min-height: 100vh; /* Ensure root takes full viewport height */
+  display: flex; /* Added to help with footer always at bottom if content is short */
+  flex-direction: column; /* Added for flex behavior */
 }
 
 .logo {

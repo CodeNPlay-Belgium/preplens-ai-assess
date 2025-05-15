@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 222.2 47.4% 11.2%; /* Default dark blue */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -22,32 +23,27 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%; /* Can be used for highlights - let's try a brighter blue: hsl(200, 80%, 55%) */
+    /* Using a brighter blue for accent: hsl(200, 85%, 55%) */
+    /* --accent: 200 85% 55%;  Let's use a calming green for accent for learning: hsl(145, 63%, 49%) */
+    /* Let's stick to the default shadcn accent for now and customize later if needed */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 222.2 84% 4.9%; /* Focus ring, can be primary or accent */
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +93,22 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Ensure full height and remove default browser margins */
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif; /* A common sans-serif stack */
+  }
+
+  /* Remove default padding from App.css for #root if it exists */
+  #root {
+    /* max-width: 1280px; */ /* Removing max-width to allow full-width layouts */
+    /* margin: 0 auto; */
+    /* padding: 2rem; */ /* Will be handled by individual pages/layouts */
+    /* text-align: center; */ /* Will be handled by individual pages/layouts */
+    width: 100%;
+    min-height: 100vh; /* Ensure root takes full viewport height */
+    display: flex;
+    flex-direction: column;
   }
 }
+
